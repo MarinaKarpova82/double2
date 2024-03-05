@@ -8,19 +8,13 @@ import Cart from './components/Cart/Cart';
 
 function App() {
   
-//const {onToggleButton} = useTelegram();
 
- useEffect( () => {
-    tg.ready();
-    }, []) 
-    
-
+  
   return (
 
     <div className="App">
       <ProductList />
-    </div>,
-    <div>blen</div>
+    </div>
   ); 
   }
 
