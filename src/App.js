@@ -5,7 +5,7 @@ import { useTelegram } from './components/hooks/useTelegtam';
 import Header from './components/Header/Header';
 import {Route, Routes} from 'react-router-dom';
 import ProductList from './components/ProductList/ProductList';
-import Cart from './components/cart/cart';
+import Cart from './components/Cart/Cart';
 
 function App() {
   
