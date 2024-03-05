@@ -1,0 +1,23 @@
+.product {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(255, 148, 109);
+    padding: 15px;
+    width:  170px;
+}
+
+.img {
+    width: 100%;
+    background-image: url('logo192.png');
+    height: 100px;
+    margin: 0 auto;
+    
+}
+
+.description {
+    font-size: 0.8em;
+}
+
+.add-btn {
+    width: 100%;
+}
