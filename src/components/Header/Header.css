@@ -7,6 +7,21 @@
     font-family: "Ubuntu", sans-serif;
 }
 
+header ul.nav {
+    float: right;
+    list-style: none;
+}
+
+header ul.nav li {
+    display: inline;
+    margin-left: 25px;
+    cursor: pointer;
+    transition: opacity 500ms ease;
+}
+
+header ul.nav li:hover {
+opacity: 0.5;
+}
 .username {
     margin-left: auto;
 }
