@@ -21,6 +21,16 @@ main {
   justify-content: space-between;
 }
 
+header .shop-cart-button {
+  float: right;
+  cursor: pointer;
+  transition: color 500ms ease;
+}
+
+header .shop-cart-button:hover {
+  color: var(--tg-theme-button-color);
+}
+
 main .item {
   width: 25%;
   margin-left: 4%;
@@ -44,7 +54,8 @@ main .item img:hover {
 
 main .add-to-cart {
   background: var(--tg-theme-button-color);
-
+  color: var(--tg-theme-text-color);
+  border-radius: 5%;
   cursor: pointer;
 }
 main b {
