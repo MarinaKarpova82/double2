@@ -10,7 +10,6 @@ export default function Header() {
         
         <div>
             <span className="logo">kittystroph</span>
-            <Button onClick={onClose} >Уйти</Button>
             <ul className="nav"> 
                 <li>Контакты</li>
                 <li>Я не придумала</li>
@@ -21,7 +20,6 @@ export default function Header() {
     </header>
   )
 }
-
 
 
 /* const Header = () => {
