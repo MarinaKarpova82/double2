@@ -14,6 +14,7 @@ class App extends React.Component {
     {
       super(props)
       this.state = {
+        orders: [],
         products: [
           {id: '1', img: 'cot6.jpeg', title: 'Коть раз', price: 200, description: 'подгоревший'},
           {id: '2', img: 'cat.jpg', title: 'Коть два', price: 230, description: 'подгоревший'},
@@ -26,15 +27,24 @@ class App extends React.Component {
           {id: '9', img: 'nevdupl.jpg', title: 'Коть восемь', price: 5000, description: 'подгоревший'},
         ]
       }
+      this.addToOrder = this.addToOrder.bind(this)
     }
    render(){
   return (
         <div className="App">
-            <Header />
-            <Items products={this.state.products}/>
+            <Header orders={this.state.orders}/>
+            <Items products={this.state.products} onAdd={this.addToOrder}/>
         </div>
-  ); 
+  ) 
   }
+
+  addToOrder(item) {
+
+    this.setState({orders: [...this.state.orders, item]})
+
+  }
+
 }
 
 export default App;
+

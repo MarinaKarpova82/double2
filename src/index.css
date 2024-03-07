@@ -39,6 +39,7 @@ header .shop-cart-button:hover {
 
 header .shop-cart {
   position: absolute;
+  right: 0;
   top: 30px;
   width: 20%;
   min-height: 100px;
@@ -73,5 +74,5 @@ main .add-to-cart {
   cursor: pointer;
 }
 main b {
- color: rgb(52, 122, 31);
+ color: var(--tg-theme-destructive-text-color);
 }

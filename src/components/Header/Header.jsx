@@ -3,9 +3,10 @@ import Button from "../Button/Button";
 import { useTelegram } from "../hooks/useTelegtam";
 import './Header.css'
 import { FaCartPlus } from "react-icons/fa6";
+import Order from "../Order";
 
 
-export default function Header() {
+export default function Header(props) {
 
     let [cartOpen, setCartOpen] = useState(false)
 
@@ -22,7 +23,11 @@ export default function Header() {
             <FaCartPlus onClick={() => setCartOpen(cartOpen = !cartOpen)} className={`shop-cart-button ${cartOpen && 'active'}`}/>
 
             {cartOpen && (
-                <div className="shop-cart"></div>
+                <div className="shop-cart">
+                    {props.orders.map(el => (
+                        <Order key={el.id} item={el}/>
+                    ))}
+                </div>
             )}
         </div>
         
