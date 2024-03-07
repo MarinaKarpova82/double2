@@ -26,6 +26,9 @@ main .item {
   margin-left: 4%;
   background: whitesmoke;
   overflow: hidden;
+  text-align: center;
+  margin-top: 1.5%;
+  color: #333;
 }
 
 main .item img {
@@ -39,8 +42,6 @@ main .item img:hover {
   transform: scale(1.05);
 }
 
-main h2, main p, main b {
-  text-align: center;
-  margin-top: 1.5%;
-  color: #333;
+main b {
+ color: rgb(52, 122, 31);
 }
