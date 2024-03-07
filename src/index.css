@@ -41,13 +41,14 @@ header .shop-cart {
   position: absolute;
   right: 0;
   top: 30px;
-  width: 20%;
   background: whitesmoke;
   padding: 10px;
 }
 
 header .shop-cart .item {
   width: 100%;
+  float: left;
+
 }
 
 header .shop-cart .item img {
