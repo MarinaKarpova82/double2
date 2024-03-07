@@ -43,8 +43,8 @@ main .item img:hover {
 }
 
 main .add-to-cart {
-  background: #cc71a3;
-  border-radius: 50%;
+  background: var(--tg-theme-button-color);
+
   cursor: pointer;
 }
 main b {
