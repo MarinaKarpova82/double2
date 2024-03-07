@@ -6,7 +6,7 @@ import { FaCartPlus } from "react-icons/fa6";
 import Order from "../Order";
 
 
-const showOrders = (props) => {
+/* const showOrders = (props) => {
     return (
     <div>
         {props.orders.map(el => (
@@ -14,11 +14,31 @@ const showOrders = (props) => {
                     ))}
     </div>
     )
+} */
+const getTotalPrice = (products = []) => {
+    return products.reduce((acc, item) => {
+        return acc += item.price
+
+    }, 0)
+}
+
+const showOrders = (props) => {
+    const totalPrice = getTotalPrice(props.orders);
+    return (
+        <div>
+            {props.orders.map(el => (
+                <Order key={el.id} item={el}/>
+            ))}
+            <Button onClick={() => buyItems(props.orders, totalPrice)}>Купить за {totalPrice}₽</Button>
+        </div>
+    )
 }
 
 const showNothing = () => {
-    return (<div className="empty"> <p>Здесть пока пусто...</p> </div>)
+    return (<div className="empty"> <p>Здесь пока пусто...</p> </div>)
 }
+
+
 
 export default function Header(props) {
 

@@ -14,12 +14,12 @@ import ProductItem from '../ProductItem/ProductItem';
     {id: '8', title: 'Коть восемь', price: 5000, description: 'подгоревший'},
 ] */
 
-const getTotalPrice = (items = []) => {
+/* const getTotalPrice = (items = []) => {
     return items.reduce((acc, item) => {
         return acc += item.price
 
     }, 0)
-} 
+} */ 
 
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
