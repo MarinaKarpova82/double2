@@ -3,6 +3,7 @@ import ProductList from './components/ProductList/ProductList';
 import Header from './components/Header/Header';
 import React from 'react';
 import Items from './components/Items';
+import './index.css';
 
 
 
