@@ -41,6 +41,7 @@ header .shop-cart {
   position: absolute;
   right: 0;
   top: 30px;
+  width: 40%;
   background: whitesmoke;
   padding: 10px;
 }
