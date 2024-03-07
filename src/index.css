@@ -21,14 +21,27 @@ main {
   justify-content: space-between;
 }
 
+header {
+  position: relative;
+}
+
 header .shop-cart-button {
   float: right;
   cursor: pointer;
   transition: color 500ms ease;
+  margin: 20px;
 }
 
 header .shop-cart-button:hover {
   color: var(--tg-theme-button-color);
+}
+
+header .shop-cart {
+  position: absolute;
+  top: 30px;
+  width: 20%;
+  min-height: 10%;
+  background: #333;
 }
 
 main .item {
