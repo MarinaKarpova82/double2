@@ -46,6 +46,17 @@ header .shop-cart {
   background: #333;
 }
 
+header .shop-cart .item {
+  width: 100%;
+}
+
+header .shop-cart .item img {
+  width: 70px;
+  float: left;
+  margin-right: 10px;
+  
+}
+
 main .item {
   width: 25%;
   margin-left: 4%;
