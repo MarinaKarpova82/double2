@@ -6,6 +6,20 @@ import { FaCartPlus } from "react-icons/fa6";
 import Order from "../Order";
 
 
+const showOrders = (props) => {
+    return (
+    <div>
+        {props.orders.map(el => (
+                        <Order key={el.id} item={el}/>
+                    ))}
+    </div>
+    )
+}
+
+const showNothing = () => {
+    return (<div className="empty"> <p>Здесть пока пусто...</p> </div>)
+}
+
 export default function Header(props) {
 
     let [cartOpen, setCartOpen] = useState(false)
@@ -24,9 +38,7 @@ export default function Header(props) {
 
             {cartOpen && (
                 <div className="shop-cart">
-                    {props.orders.map(el => (
-                        <Order key={el.id} item={el}/>
-                    ))}
+                    {props.orders.lenght > 0 ? showOrders(props): showNothing()}
                 </div>
             )}
         </div>
