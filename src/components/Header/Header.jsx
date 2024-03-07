@@ -22,7 +22,7 @@ export default function Header() {
             <FaCartPlus onClick={() => setCartOpen(cartOpen = !cartOpen)} className={`shop-cart-button ${cartOpen && 'active'}`}/>
 
             {cartOpen && (
-                <div>ничего себе!</div>
+                <div className="shop-cart"></div>
             )}
         </div>
         
