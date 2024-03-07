@@ -38,7 +38,7 @@ export default function Header(props) {
 
             {cartOpen && (
                 <div className="shop-cart">
-                    {props.orders.lenght > 0 ? showOrders(props): showNothing()}
+                    {props.orders.length > 0 ? showOrders(props): showNothing()}
                 </div>
             )}
         </div>
