@@ -23,6 +23,7 @@ class App extends React.Component {
           {id: '6', img: 'cot3.jpeg', title: 'Коть шесть', price: 5, description: 'подгоревший'},
           {id: '7', img: 'cot4.jpeg', title: 'Коть семь', price: 3000, description: 'подгоревший'},
           {id: '8', img: 'cot5.jpeg', title: 'Коть восемь', price: 5000, description: 'подгоревший'},
+          {id: '9', img: 'nevdupl.jpg', title: 'Коть девять', price: 5000, description: 'подгоревший'},
         ]
       }
     }

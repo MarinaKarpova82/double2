@@ -23,8 +23,7 @@ main {
 
 main .item {
   width: 30%;
-  height: 30%;
-  margin-bottom: 30px;
+  margin: 30px;
   background: whitesmoke;
   overflow: hidden;
 }
@@ -36,5 +35,6 @@ main .item img {
 } 
 
 main .item img:hover {
+  border-radius: 10px 10px 0 0;
   transform: scale(1.05);
 }
