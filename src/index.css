@@ -59,7 +59,7 @@ header .shop-cart .item img {
 
 }
 header .shop-cart .item h2{
-  font-size: 10px;
+  font-size: 15px;
   margin-bottom: 10px;
 }
 header .shop-cart .item b {
@@ -68,8 +68,9 @@ header .shop-cart .item b {
 }
 
 header .shop-cart .empty p {
-  font-size: 10px;
-  margin-bottom: 20px;
+  font-size: 15px;
+  margin: 20px;
+  padding: 0;
   text-align: center;
   opacity: 50%;
 }
