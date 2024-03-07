@@ -3,7 +3,7 @@ import './ProductList.css';
 import { useTelegram } from '../hooks/useTelegtam';
 import ProductItem from '../ProductItem/ProductItem';
 
-const products = [
+/* const products = [
     {id: '1', title: 'Коть раз', price: 200, description: 'подгоревший'},
     {id: '2', title: 'Коть два', price: 230, description: 'подгоревший'},
     {id: '3', title: 'Коть три', price: 999, description: 'подгоревший'},
@@ -12,7 +12,7 @@ const products = [
     {id: '6', title: 'Коть шесть', price: 5, description: 'подгоревший'},
     {id: '7', title: 'Коть семь', price: 3000, description: 'подгоревший'},
     {id: '8', title: 'Коть восемь', price: 5000, description: 'подгоревший'},
-]
+] */
 
 const getTotalPrice = (items = []) => {
     return items.reduce((acc, item) => {
