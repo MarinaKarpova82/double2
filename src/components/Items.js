@@ -5,11 +5,16 @@ import Item from './Item'
 export class Items extends Component {
   render() {
     return (
-      <main>
+      /* <main>
         {this.props.products.map(el => (
          <Item key={el.id} item={el} />
         ))}
-      </main>
+      </main> */
+      <main>
+    {this.props.products.map(el => (
+      <item key={el.id} item={el} />
+    ))}
+  </main>
     )
   }
 }
