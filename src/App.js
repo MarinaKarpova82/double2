@@ -7,7 +7,7 @@ import Items from './components/Items';
 
 
 class App extends React.Component {
-  render(){
+ 
     constructor(props) 
     {
       super(props)
@@ -24,7 +24,7 @@ class App extends React.Component {
         ]
       }
     }
-
+   render(){
   return (
         <div className="App">
             <Header />
