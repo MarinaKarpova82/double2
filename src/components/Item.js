@@ -1,14 +1,9 @@
 import React, { Component } from 'react'
-import Item from './Item'
 
 export class Item extends Component {
   render() {
     return (
-      <main>
-        {this.props.products.map(el => (
-         <Item item={el} />
-        ))}
-      </main>
+      <div>{this.props.item.title}</div>
     )
   }
 }
