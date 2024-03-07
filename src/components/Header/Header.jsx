@@ -4,6 +4,7 @@ import { useTelegram } from "../hooks/useTelegtam";
 import './Header.css'
 import { FaCartPlus } from "react-icons/fa6";
 import Order from "../Order";
+import './Header.css';
 
 
 /* const showOrders = (props) => {
