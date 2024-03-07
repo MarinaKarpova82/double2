@@ -75,7 +75,7 @@ header .shop-cart .empty p {
 }
 
 header .shop-cart .item .delete {
-  color: #34df5f;
+  color: #df3734;
   float: right;
   position: relative;
 }
@@ -102,7 +102,7 @@ main .item img:hover {
 }
 
 main .add-to-cart {
-  background: var(--tg-theme-button-color);
+  background: rgb(123, 201, 123);
   color: var(--tg-theme-text-color);
   border-radius: 5%;
   cursor: pointer;
