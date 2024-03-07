@@ -13,7 +13,7 @@ class App extends React.Component {
       super(props)
       this.state = {
         products: [
-          {id: '1', img: 'cpt6.jpeg', title: 'Коть раз', price: 200, description: 'подгоревший'},
+          {id: '1', img: 'cot6.jpeg', title: 'Коть раз', price: 200, description: 'подгоревший'},
           {id: '2', img: 'cat.jpg', title: 'Коть два', price: 230, description: 'подгоревший'},
           {id: '3', img: 'cat2.jpg', title: 'Коть три', price: 999, description: 'подгоревший'},
           {id: '4', img: 'cot1.jpeg', title: 'Коть четыри', price: 5000, description: 'подгоревший'},
