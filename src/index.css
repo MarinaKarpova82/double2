@@ -42,8 +42,8 @@ header .shop-cart {
   right: 0;
   top: 30px;
   width: 20%;
-  min-height: 100px;
-  background: #333;
+  background: whitesmoke;
+  padding: 10px;
 }
 
 header .shop-cart .item {
@@ -54,7 +54,15 @@ header .shop-cart .item img {
   width: 70px;
   float: left;
   margin-right: 10px;
-  
+
+}
+header .shop-cart .item h2{
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+header .shop-cart .item b {
+  color: #333;
+  font-weight: 600;
 }
 
 main .item {
