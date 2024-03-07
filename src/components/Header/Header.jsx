@@ -4,7 +4,22 @@ import { useTelegram } from "../hooks/useTelegtam";
 import './Header.css'
 
 
-const Header = () => {
+export default function Header() {
+  return (
+    <header>
+        
+        <div>
+            <span className="logo">kittystroph</span>
+            <Button onClick={onClose} >Уйти</Button>
+        </div>
+        
+    </header>
+  )
+}
+
+
+
+/* const Header = () => {
     const {user, onClose} = useTelegram();
 
     retorn (
@@ -18,4 +33,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Header; */
