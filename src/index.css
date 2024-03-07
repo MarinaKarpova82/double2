@@ -29,7 +29,7 @@ header .shop-cart-button {
   float: right;
   cursor: pointer;
   transition: color 500ms ease;
-  margin: 20px;
+  margin: 10px;
 }
 
 header .shop-cart-button:hover {
