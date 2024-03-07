@@ -16,15 +16,15 @@ class App extends React.Component {
       this.state = {
         orders: [],
         products: [
-          {id: '1', img: 'cot6.jpeg', title: 'Коть раз', price: 200, description: 'подгоревший'},
-          {id: '2', img: 'cat.jpg', title: 'Коть два', price: 230, description: 'подгоревший'},
-          {id: '3', img: 'cat2.jpg', title: 'Коть три', price: 999, description: 'подгоревший'},
-          {id: '4', img: 'cot1.jpeg', title: 'Коть четыри', price: 5000, description: 'подгоревший'},
-          {id: '5', img: 'cot2.jpeg', title: 'Коть пять', price: 750, description: 'подгоревший'},
-          {id: '6', img: 'cot3.jpeg', title: 'Коть шесть', price: 5, description: 'подгоревший'},
-          {id: '7', img: 'cot4.jpeg', title: 'Коть семь', price: 3000, description: 'подгоревший'},
-          {id: '8', img: 'cot5.jpeg', title: 'Коть восемь', price: 5000, description: 'подгоревший'},
-          {id: '9', img: 'nevdupl.jpg', title: 'Коть восемь', price: 5000, description: 'подгоревший'},
+          {id: '1', img: 'cat (1).jpg', title: 'Коть раз', price: 200, description: 'подгоревший'},
+          {id: '2', img: 'cat (2).jpg', title: 'Коть два', price: 230, description: 'подгоревший'},
+          {id: '3', img: 'cat (3).jpg', title: 'Коть три', price: 999, description: 'подгоревший'},
+          {id: '4', img: 'cat (4).jpg', title: 'Коть четыри', price: 5000, description: 'подгоревший'},
+          {id: '5', img: 'cat (5).jpg', title: 'Коть пять', price: 750, description: 'подгоревший'},
+          {id: '6', img: 'cat (6).jpg', title: 'Коть шесть', price: 5, description: 'подгоревший'},
+          {id: '7', img: 'cat (7).jpg', title: 'Коть семь', price: 3000, description: 'подгоревший'},
+          {id: '8', img: 'cat (8).jpg', title: 'Коть восемь', price: 5000, description: 'подгоревший'},
+          {id: '9', img: 'cat (9).jpg', title: 'Коть восемь', price: 5000, description: 'подгоревший'},
         ]
       }
       this.addToOrder = this.addToOrder.bind(this)
