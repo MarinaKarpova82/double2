@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { FaTrashAlt } from "react-icons/fa";
 
 export class Order extends Component {
   render() {
@@ -7,6 +8,7 @@ export class Order extends Component {
         <img src={"./img/" + this.props.item.img} />
         <h2>{this.props.item.title}</h2>
         <b>{this.props.item.price}₽</b>
+        <FaTrashAlt className='delete' />
       </div>
     )
   }

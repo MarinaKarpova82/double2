@@ -74,6 +74,13 @@ header .shop-cart .empty p {
   opacity: 50%;
 }
 
+header .shop-cart .item .delete {
+  color: #df3734;
+  float: right;
+  position: relative;
+  top: -10px;
+}
+
 main .item {
   width: 25%;
   margin-left: 4%;
