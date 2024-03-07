@@ -28,7 +28,7 @@ class App extends React.Component {
   return (
         <div className="App">
             <Header />
-            <Items items={this.state.products}/>
+            <Items products={this.state.products}/>
         </div>
   ); 
   }
