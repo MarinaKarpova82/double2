@@ -4,7 +4,9 @@ import Header from './components/Header/Header';
 import React from 'react';
 import Items from './components/Items';
 
-class App extends React.Component() {
+
+
+class App extends React.Component {
   render(){
     constructor(props) 
     {
