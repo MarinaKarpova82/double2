@@ -29,7 +29,7 @@ const showOrders = (props) => {
             {props.orders.map(el => (
                 <Order key={el.id} item={el}/>
             ))}
-            <Button onClick={() => buyItems(props.orders, totalPrice)}>Купить за {totalPrice}₽</Button>
+            <Button className="baton" onClick={() => buyItems(props.orders, totalPrice)}>Купить за {totalPrice}₽</Button>
         </div>
     )
 }

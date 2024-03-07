@@ -28,3 +28,8 @@ opacity: 0.5;
 .username {
     margin-left: auto;
 }
+
+.baton {
+    width: 100%;
+    background: rgb(123, 201, 123);
+}
