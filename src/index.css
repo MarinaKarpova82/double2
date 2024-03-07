@@ -34,7 +34,7 @@ header .shop-cart-button {
 }
 
 header .shop-cart-button:hover {
-  color: var(--tg-theme-button-color);
+  color: rgb(110, 180, 110);
 }
 
 header .shop-cart {
@@ -59,7 +59,7 @@ header .shop-cart .item img {
 
 }
 header .shop-cart .item h2{
-  font-size: 15px;
+  font-size: 10px;
   margin-bottom: 10px;
 }
 header .shop-cart .item b {
