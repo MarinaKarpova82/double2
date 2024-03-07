@@ -30,6 +30,7 @@ header .shop-cart-button {
   cursor: pointer;
   transition: color 500ms ease;
   margin: 10px;
+  z-index: 1000;
 }
 
 header .shop-cart-button:hover {
