@@ -22,8 +22,8 @@ main {
 }
 
 main .item {
-  width: 30%;
-  margin: 3%;
+  width: 45%;
+  margin: 5%;
   background: whitesmoke;
   overflow: hidden;
 }
