@@ -23,6 +23,7 @@ main {
 
 main .item {
   width: 30%;
+  height: 30%;
   margin-bottom: 30px;
   background: whitesmoke;
   overflow: hidden;
