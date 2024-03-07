@@ -9,11 +9,11 @@ export default function Header() {
     <header>
         
         <div>
-            <span className="logo">kittystroph</span>
+            <span className="logo"></span>
             <ul className="nav"> 
-                <li>Контакты</li>
-                <li>Я не придумала</li>
-                <li>Я не придумала 2</li>
+                <li>Кнопочк</li>
+                <li>Кнопочк</li>
+                <li>Кнопочк</li>
             </ul>
         </div>
         
