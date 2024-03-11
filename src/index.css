@@ -111,3 +111,23 @@ main .add-to-cart {
 main b {
  color: var(--tg-theme-destructive-text-color);
 }
+
+.full-item {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #272727ab;                            
+  z-index: 9999; 
+  overflow: auto;
+}
+.full-item >div {
+  width: 60%;
+  height: 60%;
+  position: relative;
+  margin: 10% auto;
+  padding: 10 px;
+  background: white;
+  border-radius: 9px;
+}
