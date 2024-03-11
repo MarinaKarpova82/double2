@@ -28,7 +28,7 @@ const showOrders = (props) => {
     return (
         <div>
             {props.orders.map(el => (
-                <Order key={el.id} item={el}/>
+                <Order  onDelete={props.onDelete} key={el.id} item={el}/>
             ))}
             <Button className="baton" onClick={() => buyItems(props.orders, totalPrice)}>Купить за {totalPrice}₽</Button>
         </div>
