@@ -42,8 +42,9 @@ header .shop-cart {
   right: 0;
   top: 30px;
   width: 40%;
-  background: whitesmoke;
+  background: rgb(226, 233, 222);
   padding: 10px;
+  z-index: 1000;
 }
 
 header .shop-cart .item {
@@ -73,6 +74,11 @@ header .shop-cart .empty p {
   padding: 0;
   text-align: center;
   opacity: 50%;
+}
+
+header .baton {
+  opacity: 50%;;
+  background: rgb(123, 201, 123);
 }
 
 header .shop-cart .item .delete {
