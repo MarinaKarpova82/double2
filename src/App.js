@@ -38,7 +38,8 @@ class App extends React.Component {
   return (
         <div className="App">
             <Header orders={this.state.orders} onDelete={this.deleteOrder} />
-            <Items onShowItem={this.onShowItem} products={this.state.products} onAdd={this.addToOrder}/>\
+            <Items onShowItem={this.onShowItem} products={this.state.products} onAdd={this.addToOrder}/>
+            <ShowFullItem item={this.state.fullItem} onCloseDescription={() => this.setState({showFullItem: false})} />
             {this.state.showFullItem && <ShowFullItem item={this.state.fullItem} />}
         </div>
   ) 

@@ -147,4 +147,5 @@ main b {
   height: 20%;
   background-color: rgb(123, 201, 123);
   color: var(--tg-theme-text-color);
+  margin-bottom: 0;
 }
