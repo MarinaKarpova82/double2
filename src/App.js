@@ -4,6 +4,7 @@ import ProductList from './components/ProductList/ProductList';
 import Header from './components/Header/Header';
 import React from 'react';
 import Items from './components/Items';
+import ShowFullItem from './components/ShowFullItem';
 
 
 
@@ -25,18 +26,25 @@ class App extends React.Component {
           {id: '7', img: 'cat (7).jpg', title: 'Коть семь', price: 3000, description: 'летучий'},
           {id: '8', img: 'cat (8).jpg', title: 'Коть вось', price: 5000, description: 'летучий'},
           {id: '9', img: 'cat (9).jpg', title: 'Коть девь', price: 5000, description: 'летучий'},
-        ]
+        ],
+        showFullItem: false
       }
       this.addToOrder = this.addToOrder.bind(this)
       this.deleteOrder = this.deleteOrder.bind(this)
+      this.onShowItem = this.onShowItem.bind(this)
     }
    render(){
   return (
         <div className="App">
             <Header orders={this.state.orders} onDelete={this.deleteOrder} />
-            <Items products={this.state.products} onAdd={this.addToOrder}/>
+            <Items onShowItem={this.onShowItem} products={this.state.products} onAdd={this.addToOrder}/>\
+            {this.state.showFullItem && <ShowFullItem/>}
         </div>
   ) 
+  }
+
+  onShowItem() {
+    this.setState({showFullItem: !this.state.showFullItem})
   }
 
   deleteOrder(id) {
