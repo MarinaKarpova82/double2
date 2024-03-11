@@ -33,14 +33,14 @@ class App extends React.Component {
       this.addToOrder = this.addToOrder.bind(this)
       this.deleteOrder = this.deleteOrder.bind(this)
       this.onShowItem = this.onShowItem.bind(this)
+      this.onCloseDescription = this.onCloseDescription.bind(this);
     }
    render(){
   return (
         <div className="App">
             <Header orders={this.state.orders} onDelete={this.deleteOrder} />
             <Items onShowItem={this.onShowItem} products={this.state.products} onAdd={this.addToOrder}/>
-            <ShowFullItem item={this.state.fullItem} onCloseDescription={() => this.setState({showFullItem: false})} />
-            {this.state.showFullItem && <ShowFullItem item={this.state.fullItem} />}
+            {this.state.showFullItem && <ShowFullItem item={this.state.fullItem} onCloseDescription={this.onCloseDescription} />}
         </div>
   ) 
   }
@@ -49,6 +49,10 @@ class App extends React.Component {
     this.setState({fullItem: item})
     this.setState({showFullItem: !this.state.showFullItem})
   }
+
+  onCloseDescription() {
+    this.setState({ showFullItem: false });
+}
 
   deleteOrder(id) {
 
