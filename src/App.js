@@ -8,7 +8,7 @@ import ShowFullItem from './components/ShowFullItem';
 import { useTelegram } from './components/hooks/useTelegtam';
 
 
-
+const telegram = useTelegram();
 
 class App extends React.Component {
  
@@ -37,14 +37,26 @@ class App extends React.Component {
       this.onCloseDescription = this.onCloseDescription.bind(this);
     }
    render(){
-  return (
+  /* return (
         <div className="App">
             <Header orders={this.state.orders} onDelete={this.deleteOrder} />
             <Items onShowItem={this.onShowItem} products={this.state.products} onAdd={this.addToOrder}/>
             {this.state.showFullItem && <ShowFullItem item={this.state.fullItem} onCloseDescription={this.onCloseDescription} />}
-            <ProductList />
         </div>
-  ) 
+  )  */
+  return (
+  <div className="App">
+                <Header orders={this.state.orders} onDelete={this.deleteOrder} />
+                <Items onShowItem={this.onShowItem} products={this.state.products} onAdd={this.addToOrder} />
+                {this.state.showFullItem && <ShowFullItem item={this.state.fullItem} onCloseDescription={this.onCloseDescription} />}
+                <div>
+                    {this.state.orders.map(el => (
+                        <Order onDelete={this.props.onDelete} key={el.id} item={el} />
+                    ))}
+                    <button className="MainButton" onClick={() => telegram.tg.MainButton.show()}>Купить за {this.state.totalPrice}₽</button>
+                </div>
+            </div>
+  )
   }
 
   onShowItem(item) {
