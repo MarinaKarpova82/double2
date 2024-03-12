@@ -4,7 +4,6 @@ import { useTelegram } from "../hooks/useTelegtam";
 import './Header.css'
 import { FaCartPlus } from "react-icons/fa6";
 import Order from "../Order";
-import './Header.css';
 
 
 /* const showOrders = (props) => {
@@ -23,7 +22,7 @@ const getTotalPrice = (products = []) => {
   
     }, 0)
   }
-
+  const { onToggleButton } = useTelegram(); //нью
 
 const showOrders = (props) => {
     const totalPrice = getTotalPrice(props.orders);
@@ -32,7 +31,8 @@ const showOrders = (props) => {
             {props.orders.map(el => (
                 <Order  onDelete={props.onDelete} key={el.id} item={el}/>
             ))}
-            <Button className="baton" onClick={() => buyItems(props.orders, totalPrice)}>Купить за {totalPrice}₽</Button>
+            
+            <tg.MainButton onClick={() => buyItems(props.orders, totalPrice)}>Купить за {totalPrice}₽</tg.MainButton>
         </div>
     )
 }
