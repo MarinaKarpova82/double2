@@ -22,7 +22,7 @@ const getTotalPrice = (products = []) => {
   
     }, 0)
   }
-  const { onToggleButton } = useTelegram(); //нью
+
 
 const showOrders = (props) => {
     const totalPrice = getTotalPrice(props.orders);
@@ -31,8 +31,7 @@ const showOrders = (props) => {
             {props.orders.map(el => (
                 <Order  onDelete={props.onDelete} key={el.id} item={el}/>
             ))}
-            
-            <tg.MainButton onClick={() => buyItems(props.orders, totalPrice)}>Купить за {totalPrice}₽</tg.MainButton>
+            <Button className="baton" onClick={() => buyItems(props.orders, totalPrice)}>Купить за {totalPrice}₽</Button>
         </div>
     )
 }
