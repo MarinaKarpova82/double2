@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import React from 'react';
 import Items from './components/Items';
 import ShowFullItem from './components/ShowFullItem';
+import { useTelegram } from './components/hooks/useTelegtam';
 
 
 
@@ -41,6 +42,7 @@ class App extends React.Component {
             <Header orders={this.state.orders} onDelete={this.deleteOrder} />
             <Items onShowItem={this.onShowItem} products={this.state.products} onAdd={this.addToOrder}/>
             {this.state.showFullItem && <ShowFullItem item={this.state.fullItem} onCloseDescription={this.onCloseDescription} />}
+            <ProductList />
         </div>
   ) 
   }

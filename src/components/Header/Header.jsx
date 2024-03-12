@@ -16,12 +16,14 @@ import './Header.css';
     </div>
     )
 } */
+
 const getTotalPrice = (products = []) => {
     return products.reduce((acc, item) => {
         return acc += item.price
-
+  
     }, 0)
-}
+  }
+
 
 const showOrders = (props) => {
     const totalPrice = getTotalPrice(props.orders);
