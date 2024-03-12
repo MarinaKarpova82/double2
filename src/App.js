@@ -9,8 +9,85 @@ import { useTelegram } from './components/hooks/useTelegtam';
 
 
 const telegram = useTelegram();
-
 class App extends React.Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+          orders: [],
+          products: [],
+          showFullItem: false,
+          fullItem: {},
+          totalPrice: 0 // Добавляем переменную totalPrice для хранения общей суммы заказов
+      };
+      this.addToOrder = this.addToOrder.bind(this);
+      this.deleteOrder = this.deleteOrder.bind(this);
+      this.onShowItem = this.onShowItem.bind(this);
+      this.onCloseDescription = this.onCloseDescription.bind(this);
+  }
+
+  calculateTotalPrice() {
+      let total = 0;
+      this.state.orders.forEach(order => {
+          total += order.price;
+      });
+      this.setState({
+          totalPrice: total
+      });
+  }
+
+  addToOrder(order) {
+      this.setState(prevState => ({
+          orders: [...prevState.orders, order]
+      }), () => {
+          this.calculateTotalPrice();
+      });
+  }
+
+  deleteOrder(orderId) {
+      this.setState(prevState => ({
+          orders: prevState.orders.filter(order => order.id !== orderId)
+      }), () => {
+          this.calculateTotalPrice();
+      });
+  }
+
+  onShowItem(item) {
+      this.setState({
+          showFullItem: true,
+          fullItem: item
+      });
+  }
+
+  onCloseDescription() {
+      this.setState({
+          showFullItem: false
+      });
+  }
+
+  render() {
+      const telegram = useTelegram();
+
+      return (
+          <div className="App">
+              <Header orders={this.state.orders} onDelete={this.deleteOrder} />
+              <Items onShowItem={this.onShowItem} products={this.state.products} onAdd={this.addToOrder} />
+              {this.state.showFullItem && <ShowFullItem item={this.state.fullItem} onCloseDescription={this.onCloseDescription} />}
+              <div>
+                  {this.state.orders.map(el => (
+                      <Order onDelete={this.deleteOrder} key={el.id} item={el} />
+                  ))}
+                  <button className="MainButton" onClick={() => telegram.tg.MainButton.show()}>
+                      Купить за {this.state.totalPrice}₽
+                  </button>
+              </div>
+          </div>
+      );
+  }
+}
+
+export default App;
+
+/* class App extends React.Component {
  
     constructor(props) 
     {
@@ -29,34 +106,24 @@ class App extends React.Component {
           {id: '9', img: 'cat (9).jpg', title: 'Коть девь', price: 5000, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
         ],
         showFullItem: false,
-        fullItem: {}
+        fullItem: {},
+        totalPrice: 0
       }
       this.addToOrder = this.addToOrder.bind(this)
       this.deleteOrder = this.deleteOrder.bind(this)
       this.onShowItem = this.onShowItem.bind(this)
       this.onCloseDescription = this.onCloseDescription.bind(this);
     }
+
+  
    render(){
-  /* return (
+ return (
         <div className="App">
             <Header orders={this.state.orders} onDelete={this.deleteOrder} />
             <Items onShowItem={this.onShowItem} products={this.state.products} onAdd={this.addToOrder}/>
             {this.state.showFullItem && <ShowFullItem item={this.state.fullItem} onCloseDescription={this.onCloseDescription} />}
         </div>
-  )  */
-  return (
-  <div className="App">
-                <Header orders={this.state.orders} onDelete={this.deleteOrder} />
-                <Items onShowItem={this.onShowItem} products={this.state.products} onAdd={this.addToOrder} />
-                {this.state.showFullItem && <ShowFullItem item={this.state.fullItem} onCloseDescription={this.onCloseDescription} />}
-                <div>
-                    {this.state.orders.map(el => (
-                        <Order onDelete={this.props.onDelete} key={el.id} item={el} />
-                    ))}
-                    <button className="MainButton" onClick={() => telegram.tg.MainButton.show()}>Купить за {this.state.totalPrice}₽</button>
-                </div>
-            </div>
-  )
+  ) 
   }
 
   onShowItem(item) {
@@ -87,4 +154,4 @@ class App extends React.Component {
 
 }
 
-export default App;
+export default App; */
