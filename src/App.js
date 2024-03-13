@@ -4,7 +4,9 @@ import Header from './components/Header/Header';
 import React from 'react';
 import Items from './components/Items';
 import ShowFullItem from './components/ShowFullItem';
-
+import firebase from 'firebase/app';
+import 'firebase/storage';
+import Base from './components/base';
 
 
 class App extends React.Component {
@@ -35,13 +37,15 @@ class App extends React.Component {
       this.onCloseDescription = this.onCloseDescription.bind(this);
     }
 
+
+ 
+
   
    render(){
  return (
         <div className="App">
-            <Header orders={this.state.orders} onDelete={this.deleteOrder} />
-            <Items onShowItem={this.onShowItem} products={this.state.products} onAdd={this.addToOrder}/>
-            {this.state.showFullItem && <ShowFullItem item={this.state.fullItem} onCloseDescription={this.onCloseDescription} />}
+            <Base />
+            
         </div>
   ) 
   }
