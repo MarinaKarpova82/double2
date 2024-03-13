@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import firebase from 'firebase/app';
 import 'firebase/storage';
 
-export default function Base() {
+export class Base extends Component {
+  render() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -51,4 +52,8 @@ export default function Base() {
             ))}
         </div>
     );
+    
+  }
 }
+
+export default Base
