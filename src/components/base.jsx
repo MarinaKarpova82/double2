@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 export class Base extends Component {
   render() { 
   const admin = require("firebase-admin");
-  const serviceAccount = require("./tg-bot-8f788-firebase-adminsdk-jnsig-4fd1831197.json");
+  const serviceAccount = require("tg-bot-8f788-firebase-adminsdk-jnsig-4fd1831197.json");
   
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
