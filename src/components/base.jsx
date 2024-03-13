@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import firebase from "firebase/app"
 import 'firebase/storage';
-import React, { Component } from 'react'
-\
+import React, { Component } from 'react';
+
 export class Base extends Component {
   render() { 
   const admin = require("firebase-admin");
@@ -42,4 +42,4 @@ export class Base extends Component {
       </div>
     )
   }
-};
+}
