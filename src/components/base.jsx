@@ -20,15 +20,12 @@ const analytics = getAnalytics(app);
 export class Base extends Component {
   render() {
     products = [
-      //<img src={"./img/" + this.props.item.img} />
       { id: '1',  title: 'К', price: 200 },
       { id: '2',  title: 'К', price: 200 }
     ]
     return (
       <div className='item'>
-        
-        <h2>{this.props.item.title}</h2>
-        <b>{this.props.item.price}₽</b>
+        <p>хуй</p>
       </div> 
     )
   }
@@ -36,6 +33,9 @@ export class Base extends Component {
 
 export default Base
 
+/* <img src={"./img/" + this.props.item.img} />
+        <h2>{this.props.item.title}</h2>
+        <b>{this.props.item.price}₽</b> */
 
 /* export class Base extends Component {
   render() { 
