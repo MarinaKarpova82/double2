@@ -19,12 +19,16 @@ const analytics = getAnalytics(app);
 
 export class Base extends Component {
   render() {
+    products = [
+      { id: '1', img: 'gs://tg-bot-48b6a.appspot.com/cat (1).jpg', title: 'К', price: 200 },
+      { id: '2', img: 'gs://tg-bot-48b6a.appspot.com/cat (2).jpg', title: 'К', price: 200 }
+    ]
     return (
-      products = [
-        { id: '1', img: 'gs://tg-bot-48b6a.appspot.com/cat (1).jpg', title: 'К', price: 200 },
-        { id: '2', img: 'gs://tg-bot-48b6a.appspot.com/cat (2).jpg', title: 'К', price: 200 }
-      ]
-      
+      <div className='item'>
+        <img src={"./img/" + this.props.item.img} />
+        <h2>{this.props.item.title}</h2>
+        <b>{this.props.item.price}₽</b>
+      </div> 
     )
   }
 }
