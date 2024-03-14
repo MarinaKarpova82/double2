@@ -5,6 +5,7 @@ import { getAnalytics } from "firebase/analytics";
 import 'firebase/auth';
 
 
+
 const app = initializeApp({
   apiKey: "AIzaSyBW8Mzad07Dil6ib3Q4NMpqQ936l0PWilw",
   authDomain: "tg-bot-48b6a.firebaseapp.com",
@@ -19,10 +20,7 @@ const analytics = getAnalytics(app);
 
 export class Base extends Component {
   render() {
-    products = [
-      { id: '1',  title: 'К', price: 200 },
-      { id: '2',  title: 'К', price: 200 }
-    ]
+   
     return (
       <div className='item'>
         <p>хуй</p>
@@ -33,7 +31,15 @@ export class Base extends Component {
 
 export default Base
 
-/* <img src={"./img/" + this.props.item.img} />
+/* 
+ products = [
+      { id: '1',  title: 'К', price: 200 },
+      { id: '2',  title: 'К', price: 200 }
+    ]
+
+
+
+<img src={"./img/" + this.props.item.img} />
         <h2>{this.props.item.title}</h2>
         <b>{this.props.item.price}₽</b> */
 
