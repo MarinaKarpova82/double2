@@ -4,42 +4,26 @@ import { getAnalytics } from "firebase/analytics";
 import 'firebase/auth';
 import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore';
 
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBW8Mzad07Dil6ib3Q4NMpqQ936l0PWilw",
+  authDomain: "tg-bot-48b6a.firebaseapp.com",
+  projectId: "tg-bot-48b6a",
+  storageBucket: "tg-bot-48b6a.appspot.com",
+  messagingSenderId: "865634902520",
+  appId: "1:865634902520:web:db1fbed48ee164d16a760d",
+  measurementId: "G-68RKYV17T6"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
 class Base extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      imageUrl: null
-    };
-  }
-
-  async componentDidMount() {
-    const app = initializeApp({
-      
-        apiKey: "AIzaSyBW8Mzad07Dil6ib3Q4NMpqQ936l0PWilw",
-        authDomain: "tg-bot-48b6a.firebaseapp.com",
-        projectId: "tg-bot-48b6a",
-        storageBucket: "tg-bot-48b6a.appspot.com",
-        messagingSenderId: "865634902520",
-        appId: "1:865634902520:web:db1fbed48ee164d16a760d",
-        measurementId: "G-68RKYV17T6"
-    }
-    );
-
-    const db = getFirestore(app);
-    const imagesCollection = collection(db, 'images');
-    const q = query(imagesCollection, where('name', '==', 'cat (1).jpg'));
-    const querySnapshot = await getDocs(q);
-
-    querySnapshot.forEach((doc) => {
-        const imageUrl = doc.data().imageUrl;
-        this.setState({ imageUrl });
-    });
-  }
-
   render() {
     return (
       <div>
-        {this.state.imageUrl ? <img src={this.state.imageUrl} alt="Cat" /> : null}
+        ьууу
       </div>
     );
   }
