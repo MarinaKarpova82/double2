@@ -5,17 +5,6 @@ import './Header.css'
 import { FaCartPlus } from "react-icons/fa6";
 import Order from "../Order";
 
-
-/* const showOrders = (props) => {
-    return (
-    <div>
-        {props.orders.map(el => (
-                        <Order key={el.id} item={el}/>
-                    ))}
-    </div>
-    )
-} */
-
 const getTotalPrice = (products = []) => {
     return products.reduce((acc, item) => {
         return acc += item.price
@@ -50,12 +39,6 @@ export default function Header(props) {
     <header>
         
         <div>
-            <span className="logo"></span>
-            <ul className="nav"> 
-                <li>Кнопочк</li>
-                <li>Кнопочк</li>
-                <li>Кнопочк</li>
-            </ul>
             <FaCartPlus onClick={() => setCartOpen(cartOpen = !cartOpen)} className={`shop-cart-button ${cartOpen && 'active'}`}/>
 
             {cartOpen && (

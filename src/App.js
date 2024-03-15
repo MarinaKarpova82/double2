@@ -38,7 +38,6 @@ class App extends React.Component {
     }
 
 
- 
 
   
    render(){
@@ -50,6 +49,14 @@ class App extends React.Component {
         </div>
   ) 
   }
+
+  
+  componentDidMount() {
+    const savedOrders = localStorage.getItem('orders');
+    if (savedOrders) {
+        this.setState({ orders: JSON.parse(savedOrders) });
+    }
+}
 
   onShowItem(item) {
     this.setState({fullItem: item})
@@ -72,10 +79,24 @@ class App extends React.Component {
       if(el.id === item.id)
       isInArray = true
     })
+    if(!isInArray) {
+        const updatedOrders = [...this.state.orders, item];
+        this.setState({ orders: updatedOrders });
+        localStorage.setItem('orders', JSON.stringify(updatedOrders));
+    }
+}
+  /* addToOrder(item) {
+    let isInArray = false
+    this.state.orders.forEach(el => {
+      if(el.id === item.id)
+      isInArray = true
+    })
     if(!isInArray)
     this.setState({orders: [...this.state.orders, item]})
 
-  }
+  } */
+
+
 
 }
 
