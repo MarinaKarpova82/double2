@@ -4,10 +4,19 @@ import Header from './components/Header/Header';
 import React from 'react';
 import Items from './components/Items';
 import ShowFullItem from './components/ShowFullItem';
+import firebase from 'firebase/app';
 import 'firebase/storage';
 
 
+firebase.initializeApp(firebaseConfig);
 
+const storage = firebase.storage();
+const storageRef = storage.ref();
+const imageUrl = 'gs://tg-bot-48b6a.appspot.com/cat (1).jpg'; // Пример ссылки на изображение
+const imageRef = storageRef.child(imageUrl);
+// Получение URL для скачивания изображения
+imageRef.getDownloadURL().then((url) => {
+})
 
 class App extends React.Component {
  
@@ -18,7 +27,7 @@ class App extends React.Component {
         orders: [],
         products: [
           {id: '1', img: 'gs://tg-bot-48b6a.appspot.com/cat (1).jpg', title: 'Коть раз', price: 200, description: 'летучий', descriptionss: 'маленький крылатый котёнок рыже-белого окраса. сидит сидя.'},
-          {id: '2', img: 'gs://tg-bot-48b6a.appspot.com/cat (2).jpg', title: 'Коть два', price: 230, description: 'летучий', descriptionss: 'горелый летучий кошк. питается исключительно мухами с красными глазами, не приемлет гусениц и жёлтые обои, будьте внимательны перед покупкой'},
+          {id: '2', img: 'url', title: 'Коть два', price: 230, description: 'летучий', descriptionss: 'горелый летучий кошк. питается исключительно мухами с красными глазами, не приемлет гусениц и жёлтые обои, будьте внимательны перед покупкой'},
           {id: '3', img: 'gs://tg-bot-48b6a.appspot.com/cat (3).jpg', title: 'Коть три', price: 999, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
           {id: '4', img: 'gs://tg-bot-48b6a.appspot.com/cat (4).jpg', title: 'Коть четь', price: 5000, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
           {id: '5', img: 'gs://tg-bot-48b6a.appspot.com/cat (5).jpg', title: 'Коть пять', price: 750, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
