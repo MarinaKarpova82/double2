@@ -10,13 +10,7 @@ import 'firebase/storage';
 
 firebase.initializeApp(firebaseConfig);
 
-const storage = firebase.storage();
-const storageRef = storage.ref();
-const imageUrl = 'gs://tg-bot-48b6a.appspot.com/cat (1).jpg'; // Пример ссылки на изображение
-const imageRef = storageRef.child(imageUrl);
-// Получение URL для скачивания изображения
-imageRef.getDownloadURL().then((url) => {
-})
+
 
 class App extends React.Component {
  
