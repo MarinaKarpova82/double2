@@ -4,7 +4,6 @@ import Header from './components/Header/Header';
 import React from 'react';
 import Items from './components/Items';
 import ShowFullItem from './components/ShowFullItem';
-import firebase from 'firebase/app';
 import 'firebase/storage';
 
 
