@@ -35,7 +35,7 @@ class App extends React.Component {
       this.onShowItem = this.onShowItem.bind(this)
       this.onCloseDescription = this.onCloseDescription.bind(this);
     }
-////////
+/* ////////
 componentDidMount() {
   Promise.all(this.state.products.map(async (product) => {
     const imageRef = ref(storage, `images/${product.id}.jpg`);
@@ -45,8 +45,21 @@ componentDidMount() {
     this.setState({ products: updatedProducts });
   });
 }
-//////////
+////////// */
+componentDidMount() {
+  Promise.all(this.state.products.map(async (product) => {
+      const imageRef = ref(storage, `images/${product.id}.jpg`);
+      const imageUrl = await getDownloadURL(imageRef);
+      return { ...product, img: imageUrl };
+  })).then((updatedProducts) => {
+      this.setState({ products: updatedProducts });
+  });
 
+  const savedOrders = localStorage.getItem('orders');
+  if (savedOrders) {
+      this.setState({ orders: JSON.parse(savedOrders) });
+  }
+}
 
   
    render(){
@@ -59,13 +72,13 @@ componentDidMount() {
   ) 
   }
 
-  
+/*   
   componentDidMount() {
     const savedOrders = localStorage.getItem('orders');
     if (savedOrders) {
         this.setState({ orders: JSON.parse(savedOrders) });
     }
-}
+} */
 
   onShowItem(item) {
     this.setState({fullItem: item})
