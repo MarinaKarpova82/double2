@@ -32,7 +32,6 @@ class Base extends Component {
 export default Base;
 
 
-
 /* const app = initializeApp({
   apiKey: "AIzaSyBW8Mzad07Dil6ib3Q4NMpqQ936l0PWilw",
   authDomain: "tg-bot-48b6a.firebaseapp.com",
