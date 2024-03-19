@@ -42,7 +42,7 @@ class App extends React.Component {
 ////////
     componentDidMount() {
       const updatedProducts = this.state.products.map(async (product) => {
-          const imageRef = ref(storage, `images/${cat (8).jpg}`); // путь к изображению в Firebase Storage
+          const imageRef = ref(storage, `images/cat (8).jpg`); // путь к изображению в Firebase Storage
           const imageUrl = await getDownloadURL(imageRef); // получаем URL изображения
           return { ...product, img: imageUrl }; // обновляем объект продукта с URL изображения
       });
