@@ -37,10 +37,10 @@ class App extends React.Component {
     }
  ////////
 componentDidMount() {
-  Promise.all(this.state.products.map(async (product) => {
-    const imageRef = ref(storage, `images/${product.id}.jpg`);
+  Promise.all(this.state.products.map(async (products) => {
+    const imageRef = ref(storage, `images/${products.id}.jpg`);
     const imageUrl = await getDownloadURL(imageRef);
-    return { ...product, img: imageUrl };
+    return { ...products, img: imageUrl };
   })).then((updatedProducts) => {
     this.setState({ products: updatedProducts });
   });
