@@ -16,7 +16,7 @@ class App extends React.Component {
       this.state = {
         orders: [],
         products: [
-          {id: '1', img: '', title: 'Коть раз', price: 200, description: 'летучий', descriptionss: 'маленький крылатый котёнок рыже-белого окраса. сидит сидя.'},
+          {id: '1', img: 'https://firebasestorage.googleapis.com/v0/b/tg-bot-48b6a.appspot.com/o/images%2F8.jpg?alt=media&token=ff53dc7d-d6b9-4c67-855a-ca3e02e3c4e2', title: 'Коть раз', price: 200, description: 'летучий', descriptionss: 'маленький крылатый котёнок рыже-белого окраса. сидит сидя.'},
           {id: '2', img: '', title: 'Коть два', price: 230, description: 'летучий', descriptionss: 'горелый летучий кошк. питается исключительно мухами с красными глазами, не приемлет гусениц и жёлтые обои, будьте внимательны перед покупкой'},
           {id: '3', img: '', title: 'Коть три', price: 999, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
           {id: '4', img: '', title: 'Коть четь', price: 5000, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
