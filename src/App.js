@@ -4,11 +4,10 @@ import Header from './components/Header/Header';
 import React from 'react';
 import Items from './components/Items';
 import ShowFullItem from './components/ShowFullItem';
-import 'firebase/storage';
 
 
 
-firebase.initializeApp(firebaseConfig);
+
 
 
 
@@ -20,15 +19,15 @@ class App extends React.Component {
       this.state = {
         orders: [],
         products: [
-          {id: '1', img: 'https://firebasestorage.googleapis.com/v0/b/tg-bot-48b6a.appspot.com/o/cat%20(1).jpg?alt=media&token=1ba34baf-a04d-4332-ba33-7002d5435fd8', title: 'Коть раз', price: 200, description: 'летучий', descriptionss: 'маленький крылатый котёнок рыже-белого окраса. сидит сидя.'},
-          {id: '2', img: 'https://firebasestorage.googleapis.com/v0/b/tg-bot-48b6a.appspot.com/o/cat%20(2).jpg?alt=media&token=673156d8-ada1-4395-844e-44fbd868d4b7', title: 'Коть два', price: 230, description: 'летучий', descriptionss: 'горелый летучий кошк. питается исключительно мухами с красными глазами, не приемлет гусениц и жёлтые обои, будьте внимательны перед покупкой'},
-          {id: '3', img: 'https://firebasestorage.googleapis.com/v0/b/tg-bot-48b6a.appspot.com/o/cat%20(3).jpg?alt=media&token=4ed15647-9b53-4dd1-9a5f-ff966d21ba8a', title: 'Коть три', price: 999, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
-          {id: '4', img: 'https://firebasestorage.googleapis.com/v0/b/tg-bot-48b6a.appspot.com/o/cat%20(3).jpg?alt=media&token=4ed15647-9b53-4dd1-9a5f-ff966d21ba8a', title: 'Коть четь', price: 5000, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
-          {id: '5', img: 'https://firebasestorage.googleapis.com/v0/b/tg-bot-48b6a.appspot.com/o/cat%20(3).jpg?alt=media&token=4ed15647-9b53-4dd1-9a5f-ff966d21ba8a', title: 'Коть пять', price: 750, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
-          {id: '6', img: 'https://firebasestorage.googleapis.com/v0/b/tg-bot-48b6a.appspot.com/o/cat%20(3).jpg?alt=media&token=4ed15647-9b53-4dd1-9a5f-ff966d21ba8a', title: 'Коть шесь', price: 5, description: 'летучий', descriptionss: 'Кот Бибуп. Бибуп спит, не тревожьте его...'},
-          {id: '7', img: 'https://firebasestorage.googleapis.com/v0/b/tg-bot-48b6a.appspot.com/o/cat%20(3).jpg?alt=media&token=4ed15647-9b53-4dd1-9a5f-ff966d21ba8a', title: 'Коть семь', price: 3000, description: 'летучий', descriptionss: 'Блеск данной модели столь велик, что в условиях эксплуатации прямо прописано смотреть нанего исключительно в сварочной маске. Внимательно ознакомьтесь с инструкцией перед покупкой и не дарите ему комплименты, иначе он может засиять ярче.'},
-          {id: '8', img: 'https://firebasestorage.googleapis.com/v0/b/tg-bot-48b6a.appspot.com/o/cat%20(3).jpg?alt=media&token=4ed15647-9b53-4dd1-9a5f-ff966d21ba8a', title: 'Коть вось', price: 5000, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
-          {id: '9', img: 'https://firebasestorage.googleapis.com/v0/b/tg-bot-48b6a.appspot.com/o/cat%20(3).jpg?alt=media&token=4ed15647-9b53-4dd1-9a5f-ff966d21ba8a', title: 'Коть девь', price: 5000, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
+          {id: '1', img: 'gs://tg-bot-48b6a.appspot.com/cat (1).jpg', title: 'Коть раз', price: 200, description: 'летучий', descriptionss: 'маленький крылатый котёнок рыже-белого окраса. сидит сидя.'},
+          {id: '2', img: 'cat (2).jpg', title: 'Коть два', price: 230, description: 'летучий', descriptionss: 'горелый летучий кошк. питается исключительно мухами с красными глазами, не приемлет гусениц и жёлтые обои, будьте внимательны перед покупкой'},
+          {id: '3', img: 'cat (3).jpg', title: 'Коть три', price: 999, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
+          {id: '4', img: 'cat (4).jpg', title: 'Коть четь', price: 5000, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
+          {id: '5', img: 'cat (5).jpg', title: 'Коть пять', price: 750, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
+          {id: '6', img: 'cat (6).jpg', title: 'Коть шесь', price: 5, description: 'летучий', descriptionss: 'Кот Бибуп. Бибуп спит, не тревожьте его...'},
+          {id: '7', img: 'cat (7).jpg', title: 'Коть семь', price: 3000, description: 'летучий', descriptionss: 'Блеск данной модели столь велик, что в условиях эксплуатации прямо прописано смотреть нанего исключительно в сварочной маске. Внимательно ознакомьтесь с инструкцией перед покупкой и не дарите ему комплименты, иначе он может засиять ярче.'},
+          {id: '8', img: 'cat (8).jpg', title: 'Коть вось', price: 5000, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
+          {id: '9', img: 'cat (9).jpg', title: 'Коть девь', price: 5000, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
         ],
         showFullItem: false,
         fullItem: {},
