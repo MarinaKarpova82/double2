@@ -8,6 +8,7 @@ import { getAnalytics } from "firebase/analytics";
 import { initializeApp } from 'firebase/app';
 import { getStorage, ref, getDownloadURL } from 'firebase/storage';
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyBW8Mzad07Dil6ib3Q4NMpqQ936l0PWilw",
   authDomain: "tg-bot-48b6a.firebaseapp.com",
@@ -20,7 +21,61 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const storage = getStorage(app);
+
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      products: [
+        {id: '1', img: '', title: 'Коть раз', price: 200, description: 'летучий', descriptionss: 'маленький крылатый котёнок рыже-белого окраса. сидит сидя.'},
+        {id: '2', img: '', title: 'Коть два', price: 230, description: 'летучий', descriptionss: 'горелый летучий кошк. питается исключительно мухами с красными глазами, не приемлет гусениц и жёлтые обои, будьте внимательны перед покупкой'},
+        {id: '3', img: '', title: 'Коть три', price: 999, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
+        {id: '4', img: '', title: 'Коть четь', price: 5000, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
+        {id: '5', img: '', title: 'Коть пять', price: 750, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
+        {id: '6', img: '', title: 'Коть шесь', price: 5, description: 'летучий', descriptionss: 'Кот Бибуп. Бибуп спит, не тревожьте его...'},
+        {id: '7', img: '', title: 'Коть семь', price: 3000, description: 'летучий', descriptionss: 'Блеск данной модели столь велик, что в условиях эксплуатации прямо прописано смотреть нанего исключительно в сварочной маске. Внимательно ознакомьтесь с инструкцией перед покупкой и не дарите ему комплименты, иначе он может засиять ярче.'},
+        {id: '8', img: '', title: 'Коть вось', price: 5000, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
+        {id: '9', img: '', title: 'Коть девь', price: 5000, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
+      ]
+    };
+  }
+
+  componentDidMount() {
+    const updatedProducts = this.state.products.map(product => {
+      const storageRef = ref(storage, `images/${product.id}.jpg`);
+      getDownloadURL(storageRef)
+        .then((url) => {
+          product.img = url;
+          this.setState({ products: updatedProducts });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        {this.state.products.map(product => (
+          <div key={product.id}>
+            <img src={product.img} alt={product.title} />
+            <h3>{product.title}</h3>
+            <p>{product.description}</p>
+            <p>{product.descriptionss}</p>
+          </div>
+        ))}
+      </div>
+    );
+  }
+}
+
+export default App;
+
+
+/////с одеой картинкой
+/* class App extends Component {
   constructor(props) {
     super(props);
 
@@ -49,7 +104,9 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App; */
+
+//////
 
 /* 
 class App extends React.Component {
