@@ -7,6 +7,17 @@ import ShowFullItem from './components/ShowFullItem';
 import { getDownloadURL, ref } from 'firebase/storage';
 import { storage } from './components/firebase';
 
+// Запрашиваем данные с сервера
+fetch('http://localhost:3000/getImages')
+  .then(response => response.json())
+  .then(data => {
+    // Обновляем массив products значениями из полученных данных
+    data.forEach((item, index) => {
+      document.getElementById(`img-${index + 1}`).src = item.img;
+    });
+  })
+  .catch(error => console.error('Ошибка получения изображений:', error));
+
 
 class App extends React.Component {
  
