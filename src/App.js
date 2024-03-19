@@ -5,9 +5,7 @@ import React from 'react';
 import Items from './components/Items';
 import ShowFullItem from './components/ShowFullItem';
 import { getDownloadURL, ref } from 'firebase/storage';
-import { storage } from 'firebase'; 
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { storage } from './firebase'; // добавьте импорт объекта storage из Вашего firebase.js
 
 
 class App extends React.Component {
@@ -38,15 +36,16 @@ class App extends React.Component {
       this.onCloseDescription = this.onCloseDescription.bind(this);
     }
 ////////
+
 componentDidMount() {
   const updatedProducts = this.state.products.map(async (product) => {
-      const imageRef = ref(storage, `images/${product.id}.jpg`);
-      const imageUrl = await getDownloadURL(imageRef);
-      return { ...product, img: imageUrl };
+    const imageRef = ref(storage, `images/${product.id}.jpg`);
+    const imageUrl = await getDownloadURL(imageRef);
+    return { ...product, img: imageUrl };
   });
 
   Promise.all(updatedProducts).then((products) => {
-      this.setState({ products });
+    this.setState({ products });
   });
 }
 //////////
