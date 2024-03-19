@@ -1,29 +1,52 @@
 import './index.css';
-/* import './App.css'; */
+import './App.css'; 
+import React, { Component } from 'react';
 import Header from './components/Header/Header';
-//import React from 'react';
-import React, { useState } from 'react';
-/* import Items from './components/Items';
+import Items from './components/Items';
 import ShowFullItem from './components/ShowFullItem';
-import { getDownloadURL, ref } from 'firebase/storage';
-import { storage } from './components/firebase';
- */
+import { getAnalytics } from "firebase/analytics";
+import { initializeApp } from 'firebase/app';
+import { getStorage, ref, getDownloadURL } from 'firebase/storage';
 
-function App() {
-  const [imageUrl, setImageUrl] = useState('');
+const firebaseConfig = {
+  apiKey: "AIzaSyBW8Mzad07Dil6ib3Q4NMpqQ936l0PWilw",
+  authDomain: "tg-bot-48b6a.firebaseapp.com",
+  projectId: "tg-bot-48b6a",
+  storageBucket: "tg-bot-48b6a.appspot.com",
+  messagingSenderId: "865634902520",
+  appId: "1:865634902520:web:db1fbed48ee164d16a760d",
+  measurementId: "G-68RKYV17T6"
+};
 
-  useEffect(() => {
-    fetch('http://localhost:3000/get-image') // Замените localhost на адрес вашего бекэнда
-      .then(response => response.json())
-      .then(data => setImageUrl(data.imageUrl))
-      .catch(error => console.error(error));
-  }, []);
+const app = initializeApp(firebaseConfig);
+const storage = getStorage(app);
+class App extends Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <div>
-      {imageUrl && <img src={imageUrl} alt="Image" />}
-    </div>
-  );
+    this.state = {
+      imageUrl: ''
+    };
+  }
+
+  componentDidMount() {
+    const storageRef = ref(storage, 'images/1.jpg');
+    getDownloadURL(storageRef)
+      .then((url) => {
+        this.setState({ imageUrl: url });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  render() {
+    return (
+      <div>
+        {this.state.imageUrl && <img src={this.state.imageUrl} alt="firebase-image" />}
+      </div>
+    );
+  }
 }
 
 export default App;
