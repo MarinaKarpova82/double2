@@ -87,20 +87,19 @@ class App extends React.Component {
     }
  ////////
  componentDidMount() {
-  const updatedProducts = [];
-  this.state.products.forEach(product => {
+  Promise.all(this.state.products.map(product => {
     const storageRef = ref(storage, `images/${product.id}.jpg`);
-    getDownloadURL(storageRef)
+    return getDownloadURL(storageRef)
       .then((url) => {
         product.img = url;
-        updatedProducts.push(product);
-        if (updatedProducts.length === this.state.products.length) {
-          this.setState({ products: updatedProducts });
-        }
+        return product;
       })
       .catch((error) => {
         console.log(error);
+        return product;
       });
+  })).then(updatedProducts => {
+    this.setState({ products: updatedProducts });
   });
 }
 ////////// 
