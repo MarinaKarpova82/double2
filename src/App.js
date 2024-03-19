@@ -36,16 +36,13 @@ class App extends React.Component {
       this.onCloseDescription = this.onCloseDescription.bind(this);
     }
 ////////
-
 componentDidMount() {
-  const updatedProducts = this.state.products.map(async (product) => {
+  Promise.all(this.state.products.map(async (product) => {
     const imageRef = ref(storage, `images/${product.id}.jpg`);
     const imageUrl = await getDownloadURL(imageRef);
     return { ...product, img: imageUrl };
-  });
-
-  Promise.all(updatedProducts).then((products) => {
-    this.setState({ products });
+  })).then((updatedProducts) => {
+    this.setState({ products: updatedProducts });
   });
 }
 //////////
