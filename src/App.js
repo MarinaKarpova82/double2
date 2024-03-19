@@ -4,8 +4,8 @@ import Header from './components/Header/Header';
 import React from 'react';
 import Items from './components/Items';
 import ShowFullItem from './components/ShowFullItem';
-import { getStorage, getDownloadURL, ref } from 'firebase/storage';
-import { storage } from './firebase'; 
+import { getDownloadURL, ref } from 'firebase/storage';
+import { storage } from 'firebase'; 
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
