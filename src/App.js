@@ -1,12 +1,13 @@
 import './index.css';
-import './App.css';
+/* import './App.css'; */
 import Header from './components/Header/Header';
-import React from 'react';
-import Items from './components/Items';
+//import React from 'react';
+import React, { useState } from 'react';
+/* import Items from './components/Items';
 import ShowFullItem from './components/ShowFullItem';
 import { getDownloadURL, ref } from 'firebase/storage';
 import { storage } from './components/firebase';
-
+ */
 
 function App() {
   const [imageUrl, setImageUrl] = useState('');
