@@ -148,8 +148,8 @@ class App extends React.Component {
         localStorage.setItem('orders', JSON.stringify(updatedOrders));
     }
 }
-  ///// закоменчено
-  
+ 
+ /*  
   addToOrder(item) {
     let isInArray = false
     this.state.orders.forEach(el => {
@@ -159,7 +159,7 @@ class App extends React.Component {
     if(!isInArray)
     this.setState({orders: [...this.state.orders, item]})
 
-  } /////////////////////
+  }  */
 
 
 
