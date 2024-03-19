@@ -7,17 +7,25 @@ import ShowFullItem from './components/ShowFullItem';
 import { getDownloadURL, ref } from 'firebase/storage';
 import { storage } from './components/firebase';
 
-// Запрашиваем данные с сервера
-fetch('http://localhost:3000/getImages')
-  .then(response => response.json())
-  .then(data => {
-    // Обновляем массив products значениями из полученных данных
-    data.forEach((item, index) => {
-      document.getElementById(`img-${index + 1}`).src = item.img;
-    });
-  })
-  .catch(error => console.error('Ошибка получения изображений:', error));
 
+function App() {
+  const [imageUrl, setImageUrl] = useState('');
+
+  useEffect(() => {
+    fetch('http://localhost:3000/get-image') // Замените localhost на адрес вашего бекэнда
+      .then(response => response.json())
+      .then(data => setImageUrl(data.imageUrl))
+      .catch(error => console.error(error));
+  }, []);
+
+  return (
+    <div>
+      {imageUrl && <img src={imageUrl} alt="Image" />}
+    </div>
+  );
+}
+
+/* export default App;
 
 class App extends React.Component {
  
@@ -97,7 +105,9 @@ class App extends React.Component {
         localStorage.setItem('orders', JSON.stringify(updatedOrders));
     }
 }
-  /* addToOrder(item) {
+  ///// закоменчено
+  
+  addToOrder(item) {
     let isInArray = false
     this.state.orders.forEach(el => {
       if(el.id === item.id)
@@ -106,10 +116,11 @@ class App extends React.Component {
     if(!isInArray)
     this.setState({orders: [...this.state.orders, item]})
 
-  } */
+  } /////////////////////
 
 
 
 }
-
+ 
 export default App; 
+*/
