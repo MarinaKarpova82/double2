@@ -40,17 +40,17 @@ class App extends React.Component {
       this.onCloseDescription = this.onCloseDescription.bind(this);
     }
 ////////
-    componentDidMount() {
-      const updatedProducts = this.state.products.map(async (product) => {
-          const imageRef = ref(storage, `images/cat (8).jpg`); // путь к изображению в Firebase Storage
-          const imageUrl = await getDownloadURL(imageRef); // получаем URL изображения
-          return { ...product, img: imageUrl }; // обновляем объект продукта с URL изображения
-      });
+componentDidMount() {
+  const updatedProducts = this.state.products.map(async (product) => {
+      const imageRef = ref(storage, `images/cat (8).jpg`);
+      const imageUrl = await getDownloadURL(imageRef);
+      return { ...product, img: imageUrl };
+  });
 
-      Promise.all(updatedProducts).then((products) => {
-          this.setState({ products });
-      });
-  }
+  Promise.all(updatedProducts).then((products) => {
+      this.setState({ products });
+  });
+}
 //////////
 
 
