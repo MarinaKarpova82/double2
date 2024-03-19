@@ -25,8 +25,9 @@ function App() {
   );
 }
 
-/* export default App;
+export default App;
 
+/* 
 class App extends React.Component {
  
     constructor(props) 
