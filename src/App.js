@@ -78,7 +78,8 @@ class App extends React.Component {
         ],
         showFullItem: false,
         fullItem: {},
-        totalPrice: 0
+        totalPrice: 0,
+       imagesLoaded: false ////
       }
       this.addToOrder = this.addToOrder.bind(this)
       this.deleteOrder = this.deleteOrder.bind(this)
@@ -99,13 +100,27 @@ class App extends React.Component {
         return product;
       });
   })).then(updatedProducts => {
-    this.setState({ products: updatedProducts });
+    this.setState({ products: updatedProducts, imagesLoaded: true });
   });
 }
+
 ////////// 
 
-
-  
+render() {
+  return (
+    <div className="App">
+      <Header orders={this.state.orders} onDelete={this.deleteOrder} />
+      {this.state.imagesLoaded ? (
+        <Items onShowItem={this.onShowItem} products={this.state.products} onAdd={this.addToOrder} />
+      ) : (
+        <div>Loading...</div>
+      )}
+      {this.state.showFullItem && <ShowFullItem item={this.state.fullItem} onCloseDescription={this.onCloseDescription} />}
+    </div>
+  );
+}
+}
+/*   
    render(){
  return (
         <div className="App">
@@ -116,7 +131,7 @@ class App extends React.Component {
   ) 
   }
 
- 
+  */
   componentDidMount1() {
     const savedOrders = localStorage.getItem('orders');
     if (savedOrders) {
