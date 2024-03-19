@@ -119,7 +119,7 @@ render() {
     </div>
   );
 }
-}
+
 /*   
    render(){
  return (
@@ -137,7 +137,7 @@ render() {
     if (savedOrders) {
         this.setState({ orders: JSON.parse(savedOrders) });
     }
-} 
+}
 
   onShowItem(item) {
     this.setState({fullItem: item})
