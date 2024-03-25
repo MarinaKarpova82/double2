@@ -66,15 +66,15 @@ class App extends React.Component {
       this.state = {
         orders: [],
         products: [
-          {id: '1', img: 'https://firebasestorage.googleapis.com/v0/b/tg-bot-48b6a.appspot.com/o/images%2F1.jpg?alt=media&token=c2666712-234b-46ea-8b29-cba115837e58', title: 'Коть раз', price: 200, description: 'летучий', descriptionss: 'маленький крылатый котёнок рыже-белого окраса. сидит сидя.'},
-          {id: '2', img: 'gs://tg-bot-48b6a.appspot.com/images/2.jpg', title: 'Коть два', price: 230, description: 'летучий', descriptionss: 'горелый летучий кошк. питается исключительно мухами с красными глазами, не приемлет гусениц и жёлтые обои, будьте внимательны перед покупкой'},
-          {id: '3', img: 'gs://tg-bot-48b6a.appspot.com/images/3.jpg', title: 'Коть три', price: 999, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
-          {id: '4', img: 'gs://tg-bot-48b6a.appspot.com/images/4.jpg', title: 'Коть четь', price: 5000, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
-          {id: '5', img: 'gs://tg-bot-48b6a.appspot.com/images/5.jpg', title: 'Коть пять', price: 750, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
-          {id: '6', img: 'gs://tg-bot-48b6a.appspot.com/images/6.jpg', title: 'Коть шесь', price: 5, description: 'летучий', descriptionss: 'Кот Бибуп. Бибуп спит, не тревожьте его...'},
-          {id: '7', img: 'gs://tg-bot-48b6a.appspot.com/images/7.jpg', title: 'Коть семь', price: 3000, description: 'летучий', descriptionss: 'Блеск данной модели столь велик, что в условиях эксплуатации прямо прописано смотреть нанего исключительно в сварочной маске. Внимательно ознакомьтесь с инструкцией перед покупкой и не дарите ему комплименты, иначе он может засиять ярче.'},
-          {id: '8', img: 'gs://tg-bot-48b6a.appspot.com/images/8.jpg', title: 'Коть вось', price: 5000, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
-          {id: '9', img: 'gs://tg-bot-48b6a.appspot.com/images/9.jpg', title: 'Коть девь', price: 5000, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
+          {id: '1', img: 'cat (1).jpg', title: 'Коть раз', price: 200, description: 'летучий', descriptionss: 'маленький крылатый котёнок рыже-белого окраса. сидит сидя.'},
+          {id: '2', img: 'cat (2).jpg', title: 'Коть два', price: 230, description: 'летучий', descriptionss: 'горелый летучий кошк. питается исключительно мухами с красными глазами, не приемлет гусениц и жёлтые обои, будьте внимательны перед покупкой'},
+          {id: '3', img: 'cat (3).jpg', title: 'Коть три', price: 999, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
+          {id: '4', img: 'cat (4).jpg', title: 'Коть четь', price: 5000, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
+          {id: '5', img: 'cat (5).jpg', title: 'Коть пять', price: 750, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
+          {id: '6', img: 'cat (6).jpg', title: 'Коть шесь', price: 5, description: 'летучий', descriptionss: 'Кот Бибуп. Бибуп спит, не тревожьте его...'},
+          {id: '7', img: 'cat (7).jpg', title: 'Коть семь', price: 3000, description: 'летучий', descriptionss: 'Блеск данной модели столь велик, что в условиях эксплуатации прямо прописано смотреть нанего исключительно в сварочной маске. Внимательно ознакомьтесь с инструкцией перед покупкой и не дарите ему комплименты, иначе он может засиять ярче.'},
+          {id: '8', img: 'cat (8).jpg', title: 'Коть вось', price: 5000, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
+          {id: '9', img: 'cat (9).jpg', title: 'Коть девь', price: 5000, description: 'летучий', descriptionss: 'летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий летучий'},
         ],
         showFullItem: false,
         fullItem: {},
@@ -87,7 +87,7 @@ class App extends React.Component {
       this.onCloseDescription = this.onCloseDescription.bind(this);
     }
  ////////
- componentDidMount() {
+/*  componentDidMount() {
   Promise.all(this.state.products.map(product => {
     const storageRef = ref(storage, `images/${product.id}.jpg`);
     return getDownloadURL(storageRef)
@@ -102,7 +102,7 @@ class App extends React.Component {
   })).then(updatedProducts => {
     this.setState({ products: updatedProducts, imagesLoaded: true });
   });
-}
+} */
 
 ////////// 
 
