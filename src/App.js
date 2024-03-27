@@ -78,7 +78,7 @@ render() {
   }
 
   */
-  componentDidMount1() {
+  componentDidMount() {
     const savedOrders = localStorage.getItem('orders');
     if (savedOrders) {
         this.setState({ orders: JSON.parse(savedOrders) });
