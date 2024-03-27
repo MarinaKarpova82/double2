@@ -24,4 +24,10 @@ export default defineConfig({
     }
   })
   ],
+  resolve: {
+    alias: {
+        '/@/': path.resolve(__dirname, 'src'),
+        'main': path.resolve(__dirname, 'src/index.js')
+    }
+}
 })
