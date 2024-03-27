@@ -4,24 +4,6 @@ import React, { Component } from 'react';
 import Header from './components/Header/Header';
 import Items from './components/Items';
 import ShowFullItem from './components/ShowFullItem';
-import { getAnalytics } from "firebase/analytics";
-import { initializeApp } from 'firebase/app';
-import { getStorage, ref, getDownloadURL } from 'firebase/storage';
-
-
-const firebaseConfig = {
-  apiKey: "AIzaSyBW8Mzad07Dil6ib3Q4NMpqQ936l0PWilw",
-  authDomain: "tg-bot-48b6a.firebaseapp.com",
-  projectId: "tg-bot-48b6a",
-  storageBucket: "tg-bot-48b6a.appspot.com",
-  messagingSenderId: "865634902520",
-  appId: "1:865634902520:web:db1fbed48ee164d16a760d",
-  measurementId: "G-68RKYV17T6"
-};
-
-const app = initializeApp(firebaseConfig);
-const storage = getStorage(app);
-
 
 class App extends React.Component {
  
@@ -44,7 +26,6 @@ class App extends React.Component {
         showFullItem: false,
         fullItem: {},
         totalPrice: 0,
-       imagesLoaded: false ////
       }
       this.addToOrder = this.addToOrder.bind(this)
       this.deleteOrder = this.deleteOrder.bind(this)
@@ -52,21 +33,7 @@ class App extends React.Component {
       this.onCloseDescription = this.onCloseDescription.bind(this);
     }
 
-render() {
-  return (
-    <div className="App">
-      <Header orders={this.state.orders} onDelete={this.deleteOrder} />
-      {this.state.imagesLoaded ? (
-        <Items onShowItem={this.onShowItem} products={this.state.products} onAdd={this.addToOrder} />
-      ) : (
-        <div>Loading...</div>
-      )}
-      {this.state.showFullItem && <ShowFullItem item={this.state.fullItem} onCloseDescription={this.onCloseDescription} />}
-    </div>
-  );
-}
-
-/*   
+ 
    render(){
  return (
         <div className="App">
@@ -77,7 +44,7 @@ render() {
   ) 
   }
 
-  */
+  
   componentDidMount() {
     const savedOrders = localStorage.getItem('orders');
     if (savedOrders) {
