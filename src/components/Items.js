@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Item from './Item'
 
 
-export class Items extends Component {
+/* export class Items extends Component {
   render() {
     return (
       <main>
@@ -14,8 +14,8 @@ export class Items extends Component {
   }
 }
 
-export default Items;
-/* export class Items extends Component {
+export default Items; */
+ export class Items extends Component {
   render() {
     return (
       <main>
@@ -27,5 +27,5 @@ export default Items;
   }
 }
 
-export default Items */
+export default Items 
 

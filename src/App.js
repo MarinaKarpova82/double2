@@ -23,41 +23,6 @@ const app = initializeApp(firebaseConfig);
 const storage = getStorage(app);
 
 
-/////с одной картинкой
-/* class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      imageUrl: ''
-    };
-  }
-
-  componentDidMount() {
-    const storageRef = ref(storage, 'images/1.jpg');
-    getDownloadURL(storageRef)
-      .then((url) => {
-        this.setState({ imageUrl: url });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
-
-  render() {
-    return (
-      <div>
-        {this.state.imageUrl && <img src={this.state.imageUrl} alt="firebase-image" />}
-      </div>
-    );
-  }
-}
-
-export default App; */
-
-//////
-
-
 class App extends React.Component {
  
     constructor(props) 
@@ -86,25 +51,6 @@ class App extends React.Component {
       this.onShowItem = this.onShowItem.bind(this)
       this.onCloseDescription = this.onCloseDescription.bind(this);
     }
- ////////
-/*  componentDidMount() {
-  Promise.all(this.state.products.map(product => {
-    const storageRef = ref(storage, `images/${product.id}.jpg`);
-    return getDownloadURL(storageRef)
-      .then((url) => {
-        product.img = url;
-        return product;
-      })
-      .catch((error) => {
-        console.log(error);
-        return product;
-      });
-  })).then(updatedProducts => {
-    this.setState({ products: updatedProducts, imagesLoaded: true });
-  });
-} */
-
-////////// 
 
 render() {
   return (
